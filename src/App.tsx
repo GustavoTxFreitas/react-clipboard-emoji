@@ -1,7 +1,7 @@
 import copy from "copy-to-clipboard";  
 
 export default function App() {
-  let arr = [
+  let arr: string[] = [
     'ʕ·ᴥ·ʔ',
     'ヾ(･ω･*)ﾉ',
     '( ´ ▽ ` )ﾉ',
@@ -19,7 +19,7 @@ export default function App() {
     '-ᄒᴥᄒ-'
   ]
   
-  const copyToClipboard = (text) => {
+  const copyToClipboard = (text: string) => {
     copy(text);
     alert(`${text} foi copiado`);
   }
