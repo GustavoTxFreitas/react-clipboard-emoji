@@ -1,3 +1,5 @@
+import copy from "copy-to-clipboard";  
+
 export default function App() {
   let arr = [
     'ʕ·ᴥ·ʔ',
@@ -17,6 +19,11 @@ export default function App() {
     '-ᄒᴥᄒ-'
   ]
   
+  const copyToClipboard = (text) => {
+    copy(text);
+    alert(`${text} foi copiado`);
+  }
+
   return (
     <div className="App">
       <h1>Hello Vite + React!</h1>
@@ -24,7 +31,7 @@ export default function App() {
         Edit <code>App.tsx</code> and save to test HMR updates.
       </p>
       <ul>
-        {arr.map(emoji => <li>{emoji}</li>)}
+        {arr.map(emoji => <li onClick={() => copyToClipboard(emoji)}>{emoji}</li>)}
       </ul>
     </div>
   )
